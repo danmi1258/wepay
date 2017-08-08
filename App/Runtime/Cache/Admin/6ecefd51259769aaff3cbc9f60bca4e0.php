@@ -209,7 +209,7 @@
                         <div class="form-inline pull-right" style="margin:0 20px 0 0">
   
 
-  <form action="/wepay/admin.php/Product/index?name=&amp;pid=" method="get">
+  <form action="/wepay/admin.php/Product/index" method="get">
 
                                 <div class="form-group">
                                     <div class="input-group">

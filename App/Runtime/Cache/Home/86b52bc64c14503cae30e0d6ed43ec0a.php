@@ -167,8 +167,6 @@
 </html>
 
 
-<?php  dump($_SERVER['HTTP_HOST']); ?>
-
 <script src="/wepay/Template/default/static/js/socket.io-1.2.0.js"></script>
 <!--<script src="/wepay/Template/default/static/js/jquery-1.11.1.js"></script>-->
 <script src="/wepay/Template/default/static/js/vue.js"></script>

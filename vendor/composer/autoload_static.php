@@ -11,8 +11,8 @@ class ComposerStaticInit907c89793f26fd1c335d53b71100e2b6
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
-        '7fdad27ad584a05fb8da81178cdd742b' => __DIR__ . '/..' . '/arcanedev/qr-code/src/helpers.php',
         '9e090711773bfc38738f5dbaee5a7f14' => __DIR__ . '/..' . '/overtrue/wechat/src/Payment/helpers.php',
+        '7fdad27ad584a05fb8da81178cdd742b' => __DIR__ . '/..' . '/arcanedev/qr-code/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -26,6 +26,7 @@ class ComposerStaticInit907c89793f26fd1c335d53b71100e2b6
         array (
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
+            'Psr\\Container\\' => 14,
             'Predis\\' => 7,
         ),
         'O' => 
@@ -86,6 +87,10 @@ class ComposerStaticInit907c89793f26fd1c335d53b71100e2b6
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'Psr\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/container/src',
         ),
         'Predis\\' => 
         array (

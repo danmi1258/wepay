@@ -210,13 +210,15 @@ class API extends AbstractAPI
      * Make a refund request.
      *
      * @param string $orderNo
+     * @param string $refundNo
      * @param float  $totalFee
      * @param float  $refundFee
      * @param string $opUserId
      * @param string $type
      * @param string $refundAccount
+     * @param string $refundReason
      *
-     * @return \EasyWeChat\Support\Collection
+     * @return Collection
      */
     public function refund(
         $orderNo,
@@ -225,7 +227,8 @@ class API extends AbstractAPI
         $refundFee = null,
         $opUserId = null,
         $type = self::OUT_TRADE_NO,
-        $refundAccount = 'REFUND_SOURCE_UNSETTLED_FUNDS'
+        $refundAccount = 'REFUND_SOURCE_UNSETTLED_FUNDS',
+        $refundReason = ''
         ) {
         $params = [
             $type => $orderNo,
@@ -234,6 +237,7 @@ class API extends AbstractAPI
             'refund_fee' => $refundFee ?: $totalFee,
             'refund_fee_type' => $this->merchant->fee_type,
             'refund_account' => $refundAccount,
+            'refund_desc' => $refundReason,
             'op_user_id' => $opUserId ?: $this->merchant->merchant_id,
         ];
 
@@ -244,12 +248,14 @@ class API extends AbstractAPI
      * Refund by transaction id.
      *
      * @param string $orderNo
+     * @param string $refundNo
      * @param float  $totalFee
      * @param float  $refundFee
      * @param string $opUserId
      * @param string $refundAccount
+     * @param string $refundReason
      *
-     * @return \EasyWeChat\Support\Collection
+     * @return Collection
      */
     public function refundByTransactionId(
         $orderNo,
@@ -257,9 +263,10 @@ class API extends AbstractAPI
         $totalFee,
         $refundFee = null,
         $opUserId = null,
-        $refundAccount = 'REFUND_SOURCE_UNSETTLED_FUNDS'
+        $refundAccount = 'REFUND_SOURCE_UNSETTLED_FUNDS',
+        $refundReason = ''
         ) {
-        return $this->refund($orderNo, $refundNo, $totalFee, $refundFee, $opUserId, self::TRANSACTION_ID, $refundAccount);
+        return $this->refund($orderNo, $refundNo, $totalFee, $refundFee, $opUserId, self::TRANSACTION_ID, $refundAccount, $refundReason);
     }
 
     /**
